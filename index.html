@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://kit.fontawesome.com/c229a7ce14.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<div class="part1">
+		<label><i class="fa-brands fa-html5" style="color:#F16529;"></i>HTML</label>
+		<textarea placeholder="STURCTURE" id="html_code" onkeyup="display()"></textarea>
+	</div>
+	<div class="part1">
+		<label><i class="fa-brands fa-css3-alt" style="color:#264DE4;"></i>CSS</label>
+		<textarea placeholder="DESIGN" id="css_code" onkeyup="display()"></textarea>
+	</div>
+	<div class="part1">
+		<label><i class="fa-brands fa-js" style="color:#EFD81D;"></i>JAVASCRIPT</label>
+		<textarea placeholder="SCRIPT" id="js_code" onkeyup="display()"></textarea>
+	</div>
+	<div class="part1">
+		<label><i class="fa-solid fa-terminal"></i>OUTPUT</label>
+		<iframe id="result"></iframe>
+	</div>
+</div>
+<script type="text/javascript">
+	
+	function display()
+	{
+		var a_html=document.getElementById('html_code').value
+		var b_css=document.getElementById('css_code').value
+		var c_js=document.getElementById('js_code').value
+		var d_display=document.getElementById('result')
+
+		d_display.contentDocument.body.innerHTML=a_html+"<style>"+b_css+"</style>"
+		d_display.contentWindow.eval(c_js)
+	}
+</script>
+</body>
+</html>
